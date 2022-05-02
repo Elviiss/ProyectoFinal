@@ -6,14 +6,14 @@ Años después de una guerra nuclear, comenzaron a haber casos extraños de cani
 
 Aquí comienza tu misión, deberás sobrevivir a los zombies y posteriormente encontrar el laboratorio y conseguir la fórmula para erradicar a los zombies y ponerle fin a está locura…
 
-<<<<<<< HEAD
+
 "Se escuchan los golpes de Zombies en las puertas... Estamos rodeados, si el imbecil de Jaime se hubiera estado quieto no estariamos en esta situación debemos pensar algo y rápido"
 =======
 Planeta: Tame || Ciudad Mate .. Distrito C || 24-09-781 20:33 horas
 
 
 "Se escuchan los golpes de Zombies en las puertas... Estamos rodeados, si el imbecil de Ander se hubiera estado quieto no estariamos en esta situación debemos pensar algo y rápido"
->>>>>>> 6ef51cd7adb5ca7f325e51da34d6946387a81df2
+
 Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
 
 	1. Tiras la granada por la ventana para matar a muchos de ellos y salir corriendo al coche
@@ -21,9 +21,16 @@ Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
 	2. Sales corriendo de la casa disparando a los que se ponen en medio e intentas llegar al coche
 
 1. LLegas al coche pero Jaime aun no ha llegado y esta rodeado
-	1.1Arrancas el coche y te vas sin el garantizandole una muerte muy dolorosa
+	
+        1.1Arrancas el coche y te vas sin el garantizandole una muerte muy dolorosa
 		1.1.1 Arrancas el coche y sin mirar atras escuchas los gritos de tu mejor amigo Jaime...	
-	1.2 Decides esperar y disparar desde el coche
-		1.2.1 Disparando te das cuenta que ninguno de ellos muere excepto uno que si cae al suelo, esta es la abertura que necesitaba Jaime gracias a esto consigue llegar al coche.
+	
+        1.2 Decides esperar y disparar desde el coche
+		1.2.1 Disparando te das cuenta que ninguno de ellos muere excepto uno que si cae al suelo, esta es la abertura que necesitaba Jaime, gracias a esto consigue llegar al coche.
+                    --Ya con Jaime en el coche ponéis rumbo a la casa del campo que tienen, pero a mitad del camino os quedáis sin gasolina, hay una gasolinera pocos metros pero esta infestada de zombies, entonces el protagonista se da cuenta de una cosa, ¿De qué se habrá dado cuenta el protagonista al ver a los zombies?
+                    1.2.2 De que utilizando a Jaime de señuelo, podría distraer a los zombies para rellenar la gasolina
+                    1.2.3 De que disparandoles a la cabeza como hizo anteriormente, mueren definitivamente
+
+                    --En cualquiera de los casos consiguen la gasolina y ponen rumbo a la casa de campo
 
 2.Muerto. Cuando empiezas a correr te das cuenta de que los disparos no les hace nada, te ves envuelto en un mar de sangre y mueres agonizando
