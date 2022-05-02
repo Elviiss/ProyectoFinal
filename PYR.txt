@@ -6,9 +6,17 @@ Años después de una guerra nuclear, comenzaron a haber casos extraños de cani
 
 Aquí comienza tu misión, deberás sobrevivir a los zombies y posteriormente encontrar el laboratorio y conseguir la fórmula para erradicar a los zombies y ponerle fin a está locura…
 
-"Se escuchan los golpes de Zombies en las puertas... Estamos rodeados, si el imbecil de Ander se hubiera estado quieto no estariamos en esta situación debemos pensar algo y rápido"
+"Se escuchan los golpes de Zombies en las puertas... Estamos rodeados, si el imbecil de Jaime se hubiera estado quieto no estariamos en esta situación debemos pensar algo y rápido"
 Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
 
-	Tiras la granada por la ventana para matar a alguno de ellos, atraerles por el sonido y salir corriendo al coche
+	1. Tiras la granada por la ventana para matar a muchos de ellos y salir corriendo al coche
 
-	Sales corriendo de la casa disparando a los que se ponen en medio e intentas llegar al coche
+	2. Sales corriendo de la casa disparando a los que se ponen en medio e intentas llegar al coche
+
+1. LLegas al coche pero Jaime aun no ha llegado y esta rodeado
+	1.1Arrancas el coche y te vas sin el garantizandole una muerte muy dolorosa
+		1.1.1 Arrancas el coche y sin mirar atras escuchas los gritos de tu mejor amigo Jaime...	
+	1.2 Decides esperar y disparar desde el coche
+		1.2.1 Disparando te das cuenta que ninguno de ellos muere excepto uno que si cae al suelo, esta es la abertura que necesitaba Jaime gracias a esto consigue llegar al coche.
+
+2.Muerto. Cuando empiezas a correr te das cuenta de que los disparos no les hace nada, te ves envuelto en un mar de sangre y mueres agonizando
