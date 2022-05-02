@@ -25,5 +25,6 @@ Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
 		1.1.1 Arrancas el coche y sin mirar atras escuchas los gritos de tu mejor amigo Jaime...	
 	1.2 Decides esperar y disparar desde el coche
 		1.2.1 Disparando te das cuenta que ninguno de ellos muere excepto uno que si cae al suelo, esta es la abertura que necesitaba Jaime gracias a esto consigue llegar al coche.
+		+ un Jaime a tu inventario
 
 2.Muerto. Cuando empiezas a correr te das cuenta de que los disparos no les hace nada, te ves envuelto en un mar de sangre y mueres agonizando
