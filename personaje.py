@@ -14,4 +14,4 @@ class Jugador(Personaje):
 
 p = Jugador()
 p.nombre = input("Cual es el nombre del personaje? ")
-print ("%s te doy la bienvenida a Tame, preparate para esta locura...") % p.nombre
+print (p.nombre, "te doy la bienvenida a Tame, preparate para esta locura...")
