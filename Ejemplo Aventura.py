@@ -92,7 +92,7 @@ def muerte2():
 def ganar():
 	print("\nAtraviesas la puerta y te encuentras con un túnel en el que decides meterte. Tras andar durante 15 minutos, empiezas a ver luz al final del túnel. Al salir, te das cuenta de que estás fuera de la torre.\n\n")
 	print("¡HAS GANADO!\n")
-	input("Pulsa [ENTER] para volver al menu")
+	input("Pulsa [ENTER] para volver al menu.")
 	menu()
 
 
@@ -105,7 +105,7 @@ def fin():
 | |     _| |_  | | \  |
 |_|    |_____| |_|  \_|
 		''')
-	input("Pulsa [ENTER] para volver al menu")
+	input("Pulsa [ENTER] para volver al menu.")
 	menu()
 
 
