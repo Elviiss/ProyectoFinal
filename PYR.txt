@@ -1,4 +1,4 @@
-﻿Año 781 Planeta Tame…
+Año 781 Planeta Tame…
 
 
 Años después de una guerra nuclear, comenzaron a haber casos extraños de canibalismo, lo peor ocurrió cuando se descubrió que fue por un experimento fallido del científico Gregel. Comenzó el apocalipsis, se descubrió que no era canibalismo, era gente que había muerto. Los muertos se estaban comiendo a las personas vivas, cuando esto ocurría ellos también se convertían en estos seres.
@@ -11,6 +11,7 @@ Aquí comienza tu misión, deberás sobrevivir a los zombies y posteriormente en
 =======
 Planeta: Tame || Ciudad Mate .. Distrito C || 24-09-781 20:33 horas
 
+PARTE 1
 
 "Se escuchan los golpes de Zombies en las puertas... Estamos rodeados, si el imbecil de Jaime se hubiera estado quieto no estariamos en esta situación debemos pensar algo y rápido"
 
@@ -22,7 +23,7 @@ Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
 
 1. LLegas al coche pero Jaime aun no ha llegado y esta rodeado
 	
-        1.1Arrancas el coche y te vas sin el garantizandole una muerte muy dolorosa
+        1.1 Arrancas el coche y te vas sin el garantizandole una muerte muy dolorosa
 		1.1.1 Arrancas el coche y sin mirar atras escuchas los gritos de tu mejor amigo Jaime...	
 	
 	1.2 Decides esperar y disparar desde el coche
@@ -32,6 +33,7 @@ Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
                     1.2.2 De que utilizando a Jaime de señuelo, podría distraer a los zombies para rellenar la gasolina
                     1.2.3 De que disparandoles a la cabeza como hizo anteriormente, mueren definitivamente
 
+<<<<<<< HEAD
                     --En cualquiera de los casos consiguen la gasolina y ponen rumbo a la casa de campo...
                     --Ya en la casa de campo, se acercan a la puerta y se dan cuenta de que está cerrada y se nota una presencia dentro de la casa.. Que deberían hacer
                     1.2.4 Utilizar un alambre para intentar abrir la puerta
@@ -54,5 +56,19 @@ Miras tu bolsa y tienes una granada, una pistola y las llaves del coche
                                 --Viejo de la casa: Perfecto entonces te explicaré que es lo que debes hacer..
                                 --Viejo de la casa: Toma esta llave, es la que abre el laboratorio ubicado en el Distrito B, pero habrá mucha seguridad y tendrás que ingeniartelas para distraerlos, una vez dentro tendrás que encontrar la habitación de tu padre y encontrar la cura que hizo él y llevarla a este punto situado en en el Distrito A, donde te estaré esperando para crear curas para todo el mundo..
  
+=======
+      SALIDA PARTE 1  --En cualquiera de los casos consiguen la gasolina y ponen rumbo a la casa de campo--
+			  
+>>>>>>> 07c1389dbf35687f18a65e75a8316817c10d840b
 
 2.Muerto. Cuando empiezas a correr te das cuenta de que los disparos no les hace nada, te ves envuelto en un mar de sangre y mueres agonizando
+
+      MUERTE PARTE 1 --Game Over--
+
+PARTE 1.1
+
+Vas de camino a la casa de campo...
+
+1.
+
+2.
