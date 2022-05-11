@@ -48,4 +48,10 @@ if intentos < 3:
 if intentos == 3:
     print("A la tercera va la vencida!!!")
 if intentos <= 5:
-    print("Increible!!")
+    print("Increible!! PD: Tranqui no hay rima jajaja")
+if intentos <= 10:
+    print("Nada mal!")
+if intentos <= 25:
+    print("Bueno te a costado un poco, pero bien hecho!")
+if intentos <= 50:
+    print("LOL, como has llegado hasta aquí??")
