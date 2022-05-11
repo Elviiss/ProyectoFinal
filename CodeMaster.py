@@ -38,7 +38,7 @@ while propuesta != codigo:
             coincidencias = coincidencias + 1
     print ("Tu propuesta (", propuesta, ") tiene", aciertos, \
           "aciertos y ", coincidencias, "coincidencias.")
-    print(codigo)
+
     propuesta = input("Propón otro codigo: ")
 
 print ("Felicitaciones! Adivinaste el codigo en", intentos, "intentos.")
@@ -55,3 +55,7 @@ if intentos <= 25:
     print("Bueno te a costado un poco, pero bien hecho!")
 if intentos <= 50:
     print("LOL, como has llegado hasta aquí??")
+if intentos <= 80:
+    print("Tienes paciencia, lo admito")
+if intentos <= 80:
+    print("Eh... tas bien??")
