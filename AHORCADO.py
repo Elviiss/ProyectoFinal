@@ -1,5 +1,30 @@
+print('''
+
+                 8888888888 888                     
+                 888        888           
+                 888        888                 
+                 8888888    888                    
+                 888        888
+                 888        888           
+                 888        888                    
+                 8888888888 888                    
+
+
+
+                          888                                             888
+                          888                                             888
+                          888                                             888
+                  8888b.  88888b.   .d88b.  888d888 .d8888b  8888b.   .d88888  .d88b.
+                     "88b 888 "88b d88""88b 888P"  d88P"        "88b d88" 888 d88""88b
+                 .d888888 888  888 888  888 888    888      .d888888 888  888 888  888
+                 888  888 888  888 Y88..88P 888    Y88b.    888  888 Y88b 888 Y88..88P
+                 "Y888888 888  888  "Y88P"  888     "Y8888P" Y888888  "Y88888  "Y88P"
+
+                   
+
+''')
 import random
-IMÁGENES_AHORCADO = ['''
+IMAGENES_AHORCADO = ['''
 
    +---+
    |   |
@@ -64,8 +89,8 @@ def obtenerPalabraAlAzar(listaDePalabras):
       índiceDePalabras = random.randint(0, len(listaDePalabras) - 1)
       return listaDePalabras[índiceDePalabras]
  
-def mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta):
-      print(IMÁGENES_AHORCADO[len(letrasIncorrectas)])
+def mostrarTablero(IMAGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta):
+      print(IMAGENES_AHORCADO[len(letrasIncorrectas)])
       print()
  
       print('Letras incorrectas:', end=' ')
@@ -104,14 +129,13 @@ def jugarDeNuevo():
      return input().lower().startswith('s')
 
 
-print('A H O R C A D O')
 letrasIncorrectas = ''
 letrasCorrectas = ''
 palabraSecreta = obtenerPalabraAlAzar(palabras)
 juegoTerminado = False
 
 while True:
-     mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta)
+     mostrarTablero(IMAGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta)
 
      
      intento = obtenerIntento(letrasIncorrectas + letrasCorrectas)
@@ -132,8 +156,8 @@ while True:
          letrasIncorrectas = letrasIncorrectas + intento
 
          
-         if len(letrasIncorrectas) == len(IMÁGENES_AHORCADO) - 1:
-             mostrarTablero(IMÁGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta)
+         if len(letrasIncorrectas) == len(IMAGENES_AHORCADO) - 1:
+             mostrarTablero(IMAGENES_AHORCADO, letrasIncorrectas, letrasCorrectas, palabraSecreta)
              print('¡Te has quedado sin intentos!\nDespués de ' + str(len(letrasIncorrectas)) + ' intentos fallidos y ' + str(len(letrasCorrectas)) + ' aciertos, la palabra era "' + palabraSecreta + '"')
              juegoTerminado = True
 
