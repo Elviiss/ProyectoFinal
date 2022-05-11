@@ -53,7 +53,7 @@ IMAGENES_AHORCADO = ['''
    +---+
    |   |
    O   |
-  /|   |
+ _/|   |
        |
        |
    =========''', '''
@@ -61,7 +61,7 @@ IMAGENES_AHORCADO = ['''
    +---+
    |   |
    O   |
-  /|\  |
+ _/|\_ |
        |
        |
    =========''', '''
@@ -69,16 +69,16 @@ IMAGENES_AHORCADO = ['''
    +---+
    |   |
    O   |
-  /|\  |
-  /    |
+ _/|\_ |
+ _/    |
        |
    =========''', '''
 
    +---+
    |   |
    O   |
-  /|\  |
-  / \  |
+ _/|\_ |
+ _/ \_ |
        |
    =========''']
 
@@ -115,17 +115,17 @@ def obtenerIntento(letrasProbadas):
           intento = input()
           intento = intento.lower()
           if len(intento) != 1:
-              print('Por favor, introduce una letra.')
+              print('Por favor, introduce una letra:')
           elif intento in letrasProbadas:
-              print('Ya has probado esa letra. Elige otra.')
+              print('Ya has probado esa letra, elige otra:')
           elif intento not in 'abcdefghijklmnñopqrstuvwxyz':
-              print('Por favor ingresa una LETRA.')
+              print('Por favor introduce una letra:')
           else:
               return intento
 
 def jugarDeNuevo():
      
-     print('¿Quieres jugar de nuevo? (sí o no)')
+     print('¿Quieres jugar de nuevo?: (sí o no)')
      return input().lower().startswith('s')
 
 
@@ -150,7 +150,7 @@ while True:
                  encontradoTodasLasLetras = False
                  break
          if encontradoTodasLasLetras:
-             print('¡Sí! ¡La palabra secreta es "' + palabraSecreta + '"! ¡Has ganado!')
+             print('¡Sí! ¡La palabra secreta es: "' + palabraSecreta + '"¡Has ganado!')
              juegoTerminado = True
      else:
          letrasIncorrectas = letrasIncorrectas + intento
