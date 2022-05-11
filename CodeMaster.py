@@ -57,5 +57,7 @@ if intentos <= 50:
     print("LOL, como has llegado hasta aquí??")
 if intentos <= 80:
     print("Tienes paciencia, lo admito")
-if intentos <= 80:
+if intentos <= 100:
     print("Eh... tas bien??")
+if intentos <= 150:
+    print("Vaya... sigues aquí??")
