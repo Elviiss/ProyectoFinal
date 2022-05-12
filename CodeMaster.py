@@ -25,6 +25,7 @@ print ("Tienes que adivinar un numero de 4 cifras distintas.")
 propuesta = input("¿Que codigo propones?: ")
 
 
+
 intentos = 1
 
 while propuesta != codigo:
@@ -39,7 +40,7 @@ while propuesta != codigo:
             coincidencias = coincidencias + 1
     print ("Tu propuesta (", propuesta, ") tiene", aciertos, \
           "aciertos y ", coincidencias, "coincidencias.")
-
+    print(codigo)
     propuesta = input("Propón otro codigo: ")
 
 print ("Felicitaciones! Adivinaste el codigo en", intentos, "intentos.")
@@ -50,7 +51,11 @@ if intentos == 3:
     print("A la tercera va la vencida!!!")
 if intentos == 5:
     print("Increible!! PD: Tranqui no hay rima jajaja")
-if intentos > 5:
+if intentos in range (5,19)::
     print("Nada mal!")
 if intentos in range (20,50):
     print("Bien, has tardado un poco, pero lo conseguiste!")
+if intentos in range (50,100):
+    print("Vaya, tienes paciencia lo reconozco!")
+if intentos in range > 100:
+    print("Como has llegado tan lajos?!")
