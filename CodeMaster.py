@@ -21,7 +21,7 @@ print('''
       
       ''')
 print ("Bienvenido/a!")
-print ("Tienes que adivinar un numero de", 4, "cifras distintas.")
+print ("Tienes que adivinar un numero de 4 cifras distintas.")
 propuesta = input("¿Que codigo propones?: ")
 
 
