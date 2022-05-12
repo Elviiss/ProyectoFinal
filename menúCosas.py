@@ -1,4 +1,4 @@
-# --------------En contrucción-------
+# --------------En construcción-------
 def Menu():
  
     correcto=False
