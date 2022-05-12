@@ -52,3 +52,5 @@ if intentos == 5:
     print("Increible!! PD: Tranqui no hay rima jajaja")
 if intentos > 5:
     print("Nada mal!")
+if intentos in range (20,50):
+    print("Bien, has tardado un poco, pero lo conseguiste!")
