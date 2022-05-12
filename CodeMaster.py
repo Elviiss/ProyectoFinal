@@ -26,6 +26,7 @@ propuesta = input("¿Que codigo propones?: ")
 
 
 intentos = 1
+
 while propuesta != codigo:
     intentos = intentos + 1
     aciertos = 0
@@ -47,17 +48,7 @@ if intentos < 3:
     print("eh... bro, COMO?????")
 if intentos == 3:
     print("A la tercera va la vencida!!!")
-if intentos <= 5:
+if intentos == 5:
     print("Increible!! PD: Tranqui no hay rima jajaja")
-if intentos <= 10:
+if intentos > 5:
     print("Nada mal!")
-if intentos <= 25:
-    print("Bueno te a costado un poco, pero bien hecho!")
-if intentos <= 50:
-    print("LOL, como has llegado hasta aquí??")
-if intentos <= 80:
-    print("Tienes paciencia, lo admito")
-if intentos <= 100:
-    print("Eh... tas bien??")
-if intentos <= 150:
-    print("Vaya... sigues aquí??")
