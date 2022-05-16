@@ -1,3 +1,4 @@
+# import os
 def Menu():
  
     correcto=False
@@ -35,24 +36,24 @@ while not salir:
     opcion = Menu()
  
     if opcion == 1:
-        print ("Ahorcado")
-        # Acceso directo al archivo
+        print ("Has elegido Ahorcado")
+        import AHORCADO
         
     elif opcion == 2:
-        print ("Uno de carreras")
-        # Acceso directo al archivo
+        print ("Has elegido Uno de carreras")
+        # import *archivo
 
     elif opcion == 3:
-        print("Modo locura")
-        # Acceso directo al archivo
+        print("Has elegido Modo locura")
+         # import *archivo
         
     elif opcion == 4:
-        print("Code Master")
-        # Acceso directo al archivo
+        print("Has elegido Code Master")
+        import CodeMaster
         
     elif opcion == 5:
-        print("Numberdle")
-        # Acceso directo al archivo
+        print("Has elegido Numberdle")
+        import NUMBERDLE
         
     elif opcion == 6:
         salir = True
