@@ -16,3 +16,32 @@ def crearBaraja():
          baraja.append({"color":color, "valor":"SALTO", "robar":0})
    rd.shuffle(baraja)
    return baraja
+
+def seguir_Reglas():
+   pass
+
+def pintar_Carta():
+   pass
+
+def mostrar_Mano():
+   pass
+
+def escoger_Color():
+   pass
+
+def robar():
+   pass
+
+def coger_Carta():
+   pass
+
+def jugar_Carta():
+   pass
+
+def puntos():
+   pass
+
+colores=["NEGRO", "AZUL", "VERDE", "ROJA", "AMARILLA"]
+baraja=[] 
+monton=[] 
+baraja=crearBaraja()
