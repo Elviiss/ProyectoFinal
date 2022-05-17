@@ -40,7 +40,7 @@ while True:
                 coincidencias = coincidencias + 1
         print ("Tu propuesta (", propuesta, ") tiene", aciertos, \
               "aciertos y ", coincidencias, "coincidencias.\n")
-#        print(codigo) para probar las salidas
+        print('Comprobar salidas ', codigo)
         propuesta = input("Propón otro codigo: ")
         if len(propuesta) > 4:
             print("Introduce no más de 4 digitos.")
@@ -58,7 +58,7 @@ while True:
                 print("Bien, has tardado un poco, pero lo conseguiste!")
             if intentos in range (50,100):
                 print("Vaya, tienes paciencia lo reconozco!")
-            if intentos in range > 100:
+            if intentos > 100:
                 print("Como has llegado tan lejos?!")
 else:
     print("Error, tu codigo debe tener 4 digitos.")
