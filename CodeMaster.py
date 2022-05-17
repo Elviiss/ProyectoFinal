@@ -40,7 +40,7 @@ while True:
                 coincidencias = coincidencias + 1
         print ("Tu propuesta (", propuesta, ") tiene", aciertos, \
               "aciertos y ", coincidencias, "coincidencias.\n")
-        print('Comprobar salidas ', codigo)
+#        print('Comprobar salidas if:', codigo)
         propuesta = input("Propón otro codigo: ")
         if len(propuesta) > 4:
             print("Introduce no más de 4 digitos.")
