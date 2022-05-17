@@ -21,12 +21,12 @@ print('''
       
       ''')
 print ("Bienvenido/a!")
-print ("Tienes que adivinar un numero de 4 cifras distintas.")
+print ("Tienes que adivinar un código secreto de 4 cifras distintas.")
 propuesta = input("¿Que codigo propones?: ")
 
 intentos = 1
 
-while len(propuesta) <= 4:
+while True:
 
     while propuesta != codigo:
         intentos = intentos + 1
@@ -39,9 +39,11 @@ while len(propuesta) <= 4:
             elif propuesta[i] in codigo:
                 coincidencias = coincidencias + 1
         print ("Tu propuesta (", propuesta, ") tiene", aciertos, \
-              "aciertos y ", coincidencias, "coincidencias.")
-        print(codigo)
+              "aciertos y ", coincidencias, "coincidencias.\n")
+#        print(codigo) para probar las salidas
         propuesta = input("Propón otro codigo: ")
+        if len(propuesta) > 4:
+            print("Introduce no más de 4 digitos.")
         if propuesta == codigo:
             print ("Felicitaciones! Adivinaste el codigo en", intentos, "intentos.")
             if intentos < 3:
@@ -60,4 +62,4 @@ while len(propuesta) <= 4:
                 print("Como has llegado tan lejos?!")
 else:
     print("Error, tu codigo debe tener 4 digitos.")
-    print("GAME OVER :(")
+    
