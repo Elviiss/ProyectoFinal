@@ -1,0 +1,12 @@
+INSTRUCCIONES:
+
+1. Cuando se abre el juego, si justo la primera carta es un Toma Dos, quien arranca deberá llevarse dos cartas del mazo y luego recién descartarse una del mismo color.
+
+2. Las cartas especiales Cambio de Sentido se pueden tirar cuando son del color que se está jugando. O también se puede tirar una carta de retorno ante otra carta de retorno que nos han tirado.
+
+3. Las cartas especiales de bloqueo o Pierde el Turno, solo se pueden tirar contra una carta del mismo color, e indica que el compañero que nos sigue pierde el turno y juega el siguiente competidor.
+
+4. Las 4 cartas especiales Cambio de Color Toma Cuatro son las grandes estrellas del juego, las que muchas veces definen la partida. Justamente porque cambian el color hacia el color que nosotros necesitamos, pero obliga al siguiente jugador a robar cuatro cartas del mazo.
+
+5. Si al repartir las cartas en el comienzo de una partida la primera carta que se da vuelta es una +4, ese es el único caso en el que la carta se pone en el mazo y se vuelve a barajar. No se arranca el juego con un +4 dado vuelta, aunque si con las otras cartas especiales: +2, Pierde Turno, Cambio de Sentido y Comodín Cambio de Color.
+

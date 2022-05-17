@@ -60,6 +60,7 @@ while len(propuesta) <= 4:
                 print("Como has llegado tan lejos?!")
 else:
     print("Error, tu codigo debe tener 4 digitos.")
+<<<<<<< HEAD
     propuesta = input("Propón otro codigo: ")
     while propuesta != codigo:
         intentos = intentos + 1
@@ -90,3 +91,6 @@ else:
                 print("Vaya, tienes paciencia lo reconozco!")
             if intentos in range > 100:
                 print("Como has llegado tan lajos?!")
+=======
+    print("GAME OVER :(")
+>>>>>>> 13f7316a8e0b0cfdd4557b67254102943617287e
