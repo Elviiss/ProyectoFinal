@@ -52,7 +52,17 @@ def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
    print(cadenaSalida)
          
 def escoger_Color():
-   pass
+   colorElegido=""
+   repetir=True
+   while repetir:
+      i=1
+      for color in colores[1:]:
+         print(str(i)+" "+color)
+         i+=1
+      colorElegido=input("Escoge color: ")
+      if colorElegido.isnumeric() and int(colorElegido)>0 and int(colorElegido) <= len(colores)-1:
+         repetir=False
+   return colores[int(colorElegido)]
 
 def robar():
    pass
