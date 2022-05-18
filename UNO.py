@@ -32,9 +32,25 @@ def seguir_Reglas(cartaEscogida,cartaEnMesa):
 def pintar_Carta(carta):
    return ((carta["color"]+" ") if carta["color"]!="NEGRO" else "") +carta["valor"] + ("("+str(carta["robar"])+")" if carta["robar"]>0 else "")
 
-def mostrar_Mano():
-   pass
-
+def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
+   i = 1
+   col = 0
+   cadenaSalida = ""
+   for carta in jugador["mano"]:
+      
+      textoCarta=((str(i)+" " if numeradas else ""))
+      if cartaMesa!=None and seguir_Reglas(carta,cartaMesa):
+         textoCarta+= pintarCarta(carta)
+      else:
+         textoCarta+=pintarCarta(carta)
+      cadenaSalida+=("\t" if col>0 else "\n")+textoCarta
+      if(col==3):
+         col=0
+      else:
+         col+=1
+      i+=1
+   print(cadenaSalida)
+         
 def escoger_Color():
    pass
 
