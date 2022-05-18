@@ -16,8 +16,8 @@ import random
 IMAGENES_AHORCADO = ['''
 
    +---+
- |    |
-      |
+   |   |
+       |
        |
        |
        |
