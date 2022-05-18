@@ -39,7 +39,7 @@ def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
    for carta in jugador["mano"]:
       
       textoCarta=((str(i)+" " if numeradas else ""))
-      if cartaMesa!=None an seguir_Reglas(carta,cartaMesa):
+      if cartaMesa!=None and seguir_Reglas(carta,cartaMesa):
          textoCarta+= pintarCarta(carta)
       else:
          textoCarta+=pintarCarta(carta)
@@ -47,7 +47,7 @@ def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
       if(col==3):
          col=0
       else:
-         col=1
+         col+=1
       i+=1
    print(cadenaSalida)
          
