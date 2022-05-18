@@ -53,4 +53,4 @@ def puntos():
 colores=["NEGRO", "AZUL", "VERDE", "ROJA", "AMARILLA"]
 baraja=[] 
 monton=[] 
-baraja=crearBaraja()
+baraja=crearBaraja()   
