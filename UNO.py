@@ -33,7 +33,9 @@ def pintar_Carta(carta):
    return ((carta["color"]+" ") if carta["color"]!="NEGRO" else "") +carta["valor"] + ("("+str(carta["robar"])+")" if carta["robar"]>0 else "")
 
 def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
-   pass
+   i = 1
+   col = 0
+   cadenaSalida = ""
 
 def escoger_Color():
    pass
