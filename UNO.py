@@ -24,11 +24,13 @@ def crearBaraja():
    rd.shuffle(baraja)
    return baraja
 
-def seguir_Reglas():
-   pass
-
-def pintar_Carta():
-   pass
+def seguir_Reglas(cartaEscogida,cartaEnMesa):
+   if cartaEscogida["color"]=="NEGRO":
+      return True
+   else:
+      return cartaEnMesa["color"]==cartaEscogida["color"] or cartaEnMesa["valor"]==cartaEscogida["valor"]
+def pintar_Carta(carta):
+   return ((carta["color"]+" ") if carta["color"]!="NEGRO" else "") +carta["valor"] + ("("+str(carta["robar"])+")" if carta["robar"]>0 else "")
 
 def mostrar_Mano():
    pass
