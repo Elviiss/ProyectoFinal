@@ -64,8 +64,27 @@ def escoger_Color():
          repetir=False
    return colores[int(colorElegido)]
 
-def robar():
-   pass
+def robar(jugador,numero,baraja):
+   for p in range(numero):
+      if len(baraja)>0:
+         jugador["mano"].append(baraja[0])
+         baraja=baraja[1:]
+   return baraja
+
+def pillarCartaRobo(jugador,cartaMesa,baraja):
+   if cartaMesa["valor"]=="+4":
+      print("\t*****ROBA 4 Cartas*****")
+      baraja=robar(jugador,4,baraja)
+      cartaMesa["robar"]=0
+   elif cartaMesa["valor"]=="+2" and cartaMesa["robar"]>0:
+      tengo=False
+      for carta in jugador["mano"]:
+         tengo=tengo or carta["valor"]=="+2"
+      if not tengo:
+         print("\t*****ROBA "+str(cartaMesa["robar"])+" Cartas*****")
+         baraja=robar(jugador, cartaMesa["robar"],baraja)
+         cartaMesa["robar"]=0
+   return baraja
 
 def coger_Carta():
    pass
