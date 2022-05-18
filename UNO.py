@@ -36,7 +36,21 @@ def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
    i = 1
    col = 0
    cadenaSalida = ""
-
+   for carta in jugador["mano"]:
+      
+      textoCarta=((str(i)+" " if numeradas else ""))
+      if cartaMesa!=None an seguir_Reglas(carta,cartaMesa):
+         textoCarta+= pintarCarta(carta)
+      else:
+         textoCarta+=pintarCarta(carta)
+      cadenaSalida+=("\t" if col>0 else "\n")+textoCarta
+      if(col==3):
+         col=0
+      else:
+         col=1
+      i+=1
+   print(cadenasalida)
+         
 def escoger_Color():
    pass
 
