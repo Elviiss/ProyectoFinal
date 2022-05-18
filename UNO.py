@@ -49,7 +49,7 @@ def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
       else:
          col=1
       i+=1
-   print(cadenasalida)
+   print(cadenaSalida)
          
 def escoger_Color():
    pass
