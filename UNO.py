@@ -86,16 +86,59 @@ def pillarCartaRobo(jugador,cartaMesa,baraja):
          cartaMesa["robar"]=0
    return baraja
 
-def coger_Carta():
-   pass
+def coger_Carta(jugador, cartaEnMesa, baraja):
+   repetir=True
+   selecioniada=None
+   while repetir:
+      mostrarMano(jugador, True, cartaEnMesa)
+      print("\nCarta en la mesa: ", pintarCarta(monton[-1]))
+      idCartaEscogida=input("Que carta quieres tirar (R para robar, S para salir, Cartas en la Baraja: "+str(len(baraja))+"):").capitalize()
+      if idCartaEscogida=="R":
+         if len(baraja)>0:
+            baraja=robar(jugador,1,baraja)
+         else:
+            print("NO HAY CARTAS PARA ROBAR")
+      elif idCartaEscogida=="S":
+         print(''' 
+          _  _   _   ___ _____ _     _   _   _ ___ ___  ___  
+         | || | /_\ / __|_   _/_\   | | | | | | __/ __|/ _ \ 
+         | __ |/ _ \\__ \ | |/ _ \  | |_| |_| | _| (_ | (_) |
+         |_||_/_/ \_\___/ |_/_/ \_\ |____\___/|___\___|\___/ ''')
+         return -1,baraja
+      elif idCartaEscogida.isnumeric() and int(idCartaEscogida)>0 and int(idCartaEscogida)<=len(jugador["mano"]):
+         cartaEscogida=jugador["mano"][int(idCartaEscogida)-1]
+         if seguir_Reglas(cartaEscogida,cartaEnMesa):
+            jugador["mano"]=jugador["mano"][0:int(idCartaEscogida)-1]+jugador["mano"][int(idCartaEscogida):]
+            if(cartaEscogida["color"]=="NEGRO"):
+               cartaEscogida["color"]=escogerColor()
+            repetir=False
+         else:
+            print("ESA CARTA NO VALE")
+   return cartaEscogida,baraja
+
+def puntos(carta):
+   if carta["valor"]=="+4":
+      return 100
+   if carta["valor"]=="+2":
+      return 20
+   if carta["valor"]=="COMODIN":
+      return 20
+   if carta["valor"]=="SALTO":
+      return 50
+   if carta["valor"]=="CAMBIO":
+      return 50
+   return int(carta["valor"])
 
 def jugar_Carta():
-   pass
-
-def puntos():
    pass
 
 colores=["NEGRO", "AZUL", "VERDE", "ROJA", "AMARILLA"]
 baraja=[] 
 monton=[] 
-baraja=crearBaraja()   
+baraja=crearBaraja()
+
+jugadores=[{"nombre":"","mano":[], "tipo":"perdedor", "puntuacion":0},
+   {"nombre":"Elvis","mano":[], "tipo": "bot", "puntuacion":0},
+   {"nombre":"Navarro","mano":[], "tipo": "bot", "puntuacion":0},
+   {"nombre":"Jaime","mano":[], "tipo": "bot", "puntuacion":0}]
+jugadores[0]["nombre"]=input("Dime tu nombre: ")
