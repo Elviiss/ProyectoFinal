@@ -24,20 +24,67 @@ def crearBaraja():
    rd.shuffle(baraja)
    return baraja
 
-def seguir_Reglas():
-   pass
+def seguir_Reglas(cartaEscogida,cartaEnMesa):
+   if cartaEscogida["color"]=="NEGRO":
+      return True
+   else:
+      return cartaEnMesa["color"]==cartaEscogida["color"] or cartaEnMesa["valor"]==cartaEscogida["valor"]
+def pintar_Carta(carta):
+   return ((carta["color"]+" ") if carta["color"]!="NEGRO" else "") +carta["valor"] + ("("+str(carta["robar"])+")" if carta["robar"]>0 else "")
 
-def pintar_Carta():
-   pass
-
-def mostrar_Mano():
-   pass
-
+def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
+   i = 1
+   col = 0
+   cadenaSalida = ""
+   for carta in jugador["mano"]:
+      
+      textoCarta=((str(i)+" " if numeradas else ""))
+      if cartaMesa!=None and seguir_Reglas(carta,cartaMesa):
+         textoCarta+= pintarCarta(carta)
+      else:
+         textoCarta+=pintarCarta(carta)
+      cadenaSalida+=("\t" if col>0 else "\n")+textoCarta
+      if(col==3):
+         col=0
+      else:
+         col+=1
+      i+=1
+   print(cadenaSalida)
+         
 def escoger_Color():
-   pass
+   colorElegido=""
+   repetir=True
+   while repetir:
+      i=1
+      for color in colores[1:]:
+         print(str(i)+" "+color)
+         i+=1
+      colorElegido=input("Escoge color: ")
+      if colorElegido.isnumeric() and int(colorElegido)>0 and int(colorElegido) <= len(colores)-1:
+         repetir=False
+   return colores[int(colorElegido)]
 
-def robar():
-   pass
+def robar(jugador,numero,baraja):
+   for p in range(numero):
+      if len(baraja)>0:
+         jugador["mano"].append(baraja[0])
+         baraja=baraja[1:]
+   return baraja
+
+def pillarCartaRobo(jugador,cartaMesa,baraja):
+   if cartaMesa["valor"]=="+4":
+      print("\t*****ROBA 4 Cartas*****")
+      baraja=robar(jugador,4,baraja)
+      cartaMesa["robar"]=0
+   elif cartaMesa["valor"]=="+2" and cartaMesa["robar"]>0:
+      tengo=False
+      for carta in jugador["mano"]:
+         tengo=tengo or carta["valor"]=="+2"
+      if not tengo:
+         print("\t*****ROBA "+str(cartaMesa["robar"])+" Cartas*****")
+         baraja=robar(jugador, cartaMesa["robar"],baraja)
+         cartaMesa["robar"]=0
+   return baraja
 
 def coger_Carta():
    pass
@@ -51,4 +98,4 @@ def puntos():
 colores=["NEGRO", "AZUL", "VERDE", "ROJA", "AMARILLA"]
 baraja=[] 
 monton=[] 
-baraja=crearBaraja()
+baraja=crearBaraja()   
