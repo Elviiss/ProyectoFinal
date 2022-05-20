@@ -99,11 +99,15 @@ def coger_Carta(jugador, cartaEnMesa, baraja):
          else:
             print("NO HAY CARTAS PARA ROBAR")
       elif idCartaEscogida=="S":
-         print(''' 
-          _  _   _   ___ _____ _     _   _   _ ___ ___  ___  
-         | || | /_\ / __|_   _/_\   | | | | | | __/ __|/ _ \ 
-         | __ |/ _ \\__ \ | |/ _ \  | |_| |_| | _| (_ | (_) |
-         |_||_/_/ \_\___/ |_/_/ \_\ |____\___/|___\___|\___/ ''')
+         
+         print('''
+                        \t\t██╗  ██╗ █████╗ ███████╗████████╗ █████╗     ██╗     ██╗   ██╗███████╗ ██████╗  ██████╗ 
+                        \t\t██║  ██║██╔══██╗██╔════╝╚══██╔══╝██╔══██╗    ██║     ██║   ██║██╔════╝██╔════╝ ██╔═══██╗
+                        \t\t███████║███████║███████╗   ██║   ███████║    ██║     ██║   ██║█████╗  ██║  ███╗██║   ██║
+                        \t\t██╔══██║██╔══██║╚════██║   ██║   ██╔══██║    ██║     ██║   ██║██╔══╝  ██║   ██║██║   ██║
+                        \t\t██║  ██║██║  ██║███████║   ██║   ██║  ██║    ███████╗╚██████╔╝███████╗╚██████╔╝╚██████╔╝
+                        \t\t╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝    ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ 
+                                                                                        ''')
          return -1,baraja
       elif idCartaEscogida.isnumeric() and int(idCartaEscogida)>0 and int(idCartaEscogida)<=len(jugador["mano"]):
          cartaEscogida=jugador["mano"][int(idCartaEscogida)-1]
@@ -142,3 +146,13 @@ jugadores=[{"nombre":"","mano":[], "tipo":"perdedor", "puntuacion":0},
    {"nombre":"Navarro","mano":[], "tipo": "bot", "puntuacion":0},
    {"nombre":"Jaime","mano":[], "tipo": "bot", "puntuacion":0}]
 jugadores[0]["nombre"]=input("Dime tu nombre: ")
+
+for p in range(7):
+   for jugador in jugadores:
+      jugador["mano"].append(baraja[0])
+      baraja=baraja[1:]
+
+monton.append(baraja[0])
+baraja=baraja[1:]
+if(monton[0]["color"]=="NEGRO"):
+   monton[0]["color"]=rd.choice(colores[1:])
