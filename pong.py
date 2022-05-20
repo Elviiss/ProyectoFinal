@@ -24,7 +24,7 @@ jugador2.speed(0)
 jugador2.color("white")
 jugador2.shape("square")
 jugador2.penup()
-jugador2.goto(350, 0) 
+jugador2.goto(350, 0)
 jugador2.shapesize(stretch_wid=5, stretch_len = 1)
 
 ##PELOTA
@@ -34,6 +34,27 @@ pelota.color("white")
 pelota.shape("circle")
 pelota.penup()
 
+
+pelota.color("red")
+pelota.shape("circle")
+pelota.penup()
+pelota.goto(0, 0)
+
+def jugador1_arriba():
+    y = jugador1.ycor()
+    y +=  20
+    jugador1.sety(y)
+
+def jugador1_abajo():
+    y = jugador1.ycor()
+    y -=  20
+    jugador1.sety(y)
+
+
+##CONECTAR TECLADO
+ven.listen()
+ven.onkeypress(jugador1_arriba, "w")
+ven.onkeypress(jugador1_abajo, "s")
 ##BUCLE PRINCIPAL
 while True:
     ven.update()
