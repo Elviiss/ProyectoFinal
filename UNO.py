@@ -133,8 +133,50 @@ def puntos(carta):
       return 50
    return int(carta["valor"])
 
-def jugar_Carta():
-   pass
+def jugar_Carta(jugador, cartaEnMesa, baraja):
+   repetir=True
+   selecioniada=None
+   while repetir:
+      print("Tiene "+str(len(jugador["mano"]))+" cartas")
+      
+      cartasValidas=[]
+      cartasColor={}
+      for i,carta in enumerate(jugador["mano"]):
+         if seguir_Reglas(carta,cartaEnMesa):
+            cartasValidas.append(i)
+         if carta["color"]!="NEGRO":
+            if carta["color"] in cartasColor:
+               cartasColor[carta["color"]]+=1
+            else:
+               cartasColor[carta["color"]]=1
+      idCartaSeleccionada=-1
+      if len(cartasValidas)==0:
+         if len(baraja)>0:
+            print("\tRobo carta")
+            baraja=robar(jugador,1,baraja)
+         else:
+            print("NO HAY CARTAS PARA ROBAR")
+            return None,baraja
+      else:
+         for idCarta in cartasValidas:
+            if idCartaSeleccionada<0:
+               idCartaSeleccionada=idCarta
+            else:
+               if not jugador["mano"][idCarta]["valor"].isnumeric():
+                  idCartaSeleccionada=idCarta
+      
+         if jugador["mano"][idCartaSeleccionada]["color"]=="NEGRO":
+            color=""
+            colorNumero=0
+            for c in cartasColor:
+               if cartasColor[c]>colorNumero:
+                  colorNumero=cartasColor[c]
+                  color=c
+            jugador["mano"][idCartaSeleccionada]["color"]=c
+         repetir=False
+   cartaEscogida=jugador["mano"][idCartaSeleccionada]
+   jugador["mano"]=jugador["mano"][0:int(idCartaSeleccionada)]+jugador["mano"][int(idCartaSeleccionada)+1:]
+   return cartaEscogida,baraja
 
 colores=["NEGRO", "AZUL", "VERDE", "ROJA", "AMARILLA"]
 baraja=[] 
