@@ -25,7 +25,7 @@ while not salir:
  ╚════╝  ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝
           ''')
     print ("1. Ahorcado")
-    print ("2. Uno de carreras")
+    print ("2. Uno")
     print ("3. Modo locura")
     print ("4. Code Master")
     print ("5. Numberdle")
@@ -40,8 +40,8 @@ while not salir:
         import AHORCADO
         
     elif opcion == 2:
-        print ("Has elegido Uno de carreras")
-        # import *archivo
+        print ("Has elegido el Uno ")
+        import UNO
 
     elif opcion == 3:
         print("Has elegido Modo locura")
