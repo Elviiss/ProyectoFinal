@@ -1,4 +1,7 @@
 import random as rd
+from playsound import playsound
+playsound('casinoluigi.wav')
+
 
 print('''
          \t\t██╗   ██╗███╗   ██╗ ██████╗ 
