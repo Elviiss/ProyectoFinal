@@ -66,7 +66,7 @@ IMAGENES_AHORCADO = ['''
        |
    =========''']
 
-palabras = 'CANNONDALE FELT GIANT SPECIALIZED TREK YETI SANTACRUZ DIAMONDBACK FUJI ORBEA PINARELLO BMC CERVELO SCOTT KONA BMW BENELLI BENNOBIKES GOCYCLE GIFLYBIKE CORRATEC CUBE LOOK MERIDA ROCKYMOUNTAIN FLEBI MUI BULTACO MERIDA MONDRAKER BH'.split()
+palabras = 'cannondale felt giant specialized trek yeti santacruz diamondback fuji orbea pinarello bmc cervelo scott kona bmw benelli bennobikes gocycle giflybike corratec cube look merida rockymountain flebi mui bultaco merida mondraker bh'.split()
  
 def obtenerPalabraAlAzar(listaDePalabras):
       
