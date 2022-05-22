@@ -201,3 +201,14 @@ monton.append(baraja[0])
 baraja=baraja[1:]
 if(monton[0]["color"]=="NEGRO"):
    monton[0]["color"]=rd.choice(colores[1:])
+
+continuar=True
+idJugador=0
+direccionJuego=+1
+numeroJugadores=len(jugadores)
+while continuar:
+   if len(baraja)<=0:
+        continuar=False
+   if monton[-1]["valor"]=="SALTO":
+        idJugador+=direccionJuego   
+        idJugador=(numeroJugadores+idJugador) if idJugador<0 else idJugador % numeroJugadores
