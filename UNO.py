@@ -212,7 +212,7 @@ while continuar:
    if monton[-1]["valor"]=="SALTO":
         idJugador+=direccionJuego   
         idJugador=(numeroJugadores+idJugador) if idJugador<0 else idJugador % numeroJugadores
- jugador=jugadores[idJugador]
+   jugador=jugadores[idJugador]
    print("\nTurno de " + jugador["nombre"]+" - "+str(jugador["puntuacion"])+ " puntos")
    baraja=pillarCartaRobo(jugador,monton[-1],baraja)
 
