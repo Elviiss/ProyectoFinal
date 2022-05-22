@@ -212,3 +212,33 @@ while continuar:
    if monton[-1]["valor"]=="SALTO":
         idJugador+=direccionJuego   
         idJugador=(numeroJugadores+idJugador) if idJugador<0 else idJugador % numeroJugadores
+ jugador=jugadores[idJugador]
+   print("\nTurno de " + jugador["nombre"]+" - "+str(jugador["puntuacion"])+ " puntos")
+   baraja=pillarCartaRobo(jugador,monton[-1],baraja)
+
+   if jugador["tipo"]=="bot":
+        cartaEscogida,baraja=jugarCarta(jugador,monton[-1],baraja)
+        print("\tTira "+pintarCarta(cartaEscogida))
+   else:
+      cartaEscogida,baraja=escogerCarta(jugador,monton[-1],baraja)
+   if (cartaEscogida==-1):
+      continuar=False
+   else:
+      if cartaEscogida!=None:
+         jugador["puntuacion"]+=puntuar(cartaEscogida)
+         cartaEscogida["robar"]+=monton[-1]["robar"]
+         monton.append(cartaEscogida)
+      print("Tine puntuación "+str(jugador["puntuacion"]))
+      if len(jugador["mano"])==0 or jugador["puntuacion"]>=300:
+         continuar=False
+         print('''
+                        \t\t███████ ███████ ██      ██  ██████ ██ ██████   █████  ██████  ███████ ███████ ██ ██ ██ 
+                        \t\t██      ██      ██      ██ ██      ██ ██   ██ ██   ██ ██   ██ ██      ██      ██ ██ ██ 
+                        \t\t█████   █████   ██      ██ ██      ██ ██   ██ ███████ ██   ██ █████   ███████ ██ ██ ██ 
+                        \t\t██      ██      ██      ██ ██      ██ ██   ██ ██   ██ ██   ██ ██           ██          
+                        \t\t██      ███████ ███████ ██  ██████ ██ ██████  ██   ██ ██████  ███████ ███████ ██ ██ ██ ''')
+         print (jugador["nombre"]+ "  GANA LA PARTIDA"+((" Con puntuación de "+str(jugador["puntuacion"])) if (jugador["puntuacion"]>=300) else " SE ha quedado sin cartas"))
+      if monton[-1]["valor"]=="CAMBIO":
+         direccionJuego*=-1
+      idJugador+=direccionJuego
+      idJugador=(numeroJugadores+idJugador) if idJugador<0 else idJugador % numeroJugadores
