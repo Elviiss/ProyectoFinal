@@ -43,9 +43,9 @@ def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
       
       textoCarta=((str(i)+" " if numeradas else ""))
       if cartaMesa!=None and seguir_Reglas(carta,cartaMesa):
-         textoCarta+= pintarCarta(carta)
+         textoCarta+= pintar_Carta(carta)
       else:
-         textoCarta+=pintarCarta(carta)
+         textoCarta+=pintar_Carta(carta)
       cadenaSalida+=("\t" if col>0 else "\n")+textoCarta
       if(col==3):
          col=0
@@ -93,8 +93,8 @@ def coger_Carta(jugador, cartaEnMesa, baraja):
    repetir=True
    selecioniada=None
    while repetir:
-      mostrarMano(jugador, True, cartaEnMesa)
-      print("\nCarta en la mesa: ", pintarCarta(monton[-1]))
+      mostrar_Mano(jugador, True, cartaEnMesa)
+      print("\nCarta en la mesa: ", pintar_Carta(monton[-1]))
       idCartaEscogida=input("Que carta quieres tirar (R para robar, S para salir, Cartas en la Baraja: "+str(len(baraja))+"):").capitalize()
       if idCartaEscogida=="R":
          if len(baraja)>0:
@@ -117,7 +117,7 @@ def coger_Carta(jugador, cartaEnMesa, baraja):
          if seguir_Reglas(cartaEscogida,cartaEnMesa):
             jugador["mano"]=jugador["mano"][0:int(idCartaEscogida)-1]+jugador["mano"][int(idCartaEscogida):]
             if(cartaEscogida["color"]=="NEGRO"):
-               cartaEscogida["color"]=escogerColor()
+               cartaEscogida["color"]=escoger_Color()
             repetir=False
          else:
             print("ESA CARTA NO VALE")
@@ -217,15 +217,15 @@ while continuar:
    baraja=pillarCartaRobo(jugador,monton[-1],baraja)
 
    if jugador["tipo"]=="bot":
-        cartaEscogida,baraja=jugarCarta(jugador,monton[-1],baraja)
-        print("\tTira "+pintarCarta(cartaEscogida))
+        cartaEscogida,baraja=jugar_Carta(jugador,monton[-1],baraja)
+        print("\tTira "+pintar_Carta(cartaEscogida))
    else:
-      cartaEscogida,baraja=escogerCarta(jugador,monton[-1],baraja)
+      cartaEscogida,baraja=coger_Carta(jugador,monton[-1],baraja)
    if (cartaEscogida==-1):
       continuar=False
    else:
       if cartaEscogida!=None:
-         jugador["puntuacion"]+=puntuar(cartaEscogida)
+         jugador["puntuacion"]+=puntos(cartaEscogida)
          cartaEscogida["robar"]+=monton[-1]["robar"]
          monton.append(cartaEscogida)
       print("Tine puntuación "+str(jugador["puntuacion"]))
