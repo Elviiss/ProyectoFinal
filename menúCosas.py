@@ -46,7 +46,7 @@ while not salir:
 
     elif opcion == 3:
         print("Has elegido Snake")
-         import snake
+        import snake
         
     elif opcion == 4:
         print("Has elegido Code Master")
@@ -56,7 +56,7 @@ while not salir:
         print("Has elegido Numberdle")
         import NUMBERDLE
         
-    elif opcion == :
+    elif opcion == 6:
         print("Has elegido el Pong")
         import pong
         

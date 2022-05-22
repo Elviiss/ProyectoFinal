@@ -1,6 +1,6 @@
 import random as rd
-from playsound import playsound
-playsound('casinoluigi.wav')
+##from playsound import playsound
+##playsound('casinoluigi.wav')
 
 
 print('''
