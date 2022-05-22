@@ -1,4 +1,7 @@
 import random as rd
+##from playsound import playsound
+##playsound('casinoluigi.wav')
+
 
 print('''
          \t\t██╗   ██╗███╗   ██╗ ██████╗ 
@@ -24,31 +27,177 @@ def crearBaraja():
    rd.shuffle(baraja)
    return baraja
 
-def seguir_Reglas():
-   pass
+def seguir_Reglas(cartaEscogida,cartaEnMesa):
+   if cartaEscogida["color"]=="NEGRO":
+      return True
+   else:
+      return cartaEnMesa["color"]==cartaEscogida["color"] or cartaEnMesa["valor"]==cartaEscogida["valor"]
+def pintar_Carta(carta):
+   return ((carta["color"]+" ") if carta["color"]!="NEGRO" else "") +carta["valor"] + ("("+str(carta["robar"])+")" if carta["robar"]>0 else "")
 
-def pintar_Carta():
-   pass
-
-def mostrar_Mano():
-   pass
-
+def mostrar_Mano(jugador, numeradas = False, cartaMesa = None):
+   i = 1
+   col = 0
+   cadenaSalida = ""
+   for carta in jugador["mano"]:
+      
+      textoCarta=((str(i)+" " if numeradas else ""))
+      if cartaMesa!=None and seguir_Reglas(carta,cartaMesa):
+         textoCarta+= pintarCarta(carta)
+      else:
+         textoCarta+=pintarCarta(carta)
+      cadenaSalida+=("\t" if col>0 else "\n")+textoCarta
+      if(col==3):
+         col=0
+      else:
+         col+=1
+      i+=1
+   print(cadenaSalida)
+         
 def escoger_Color():
-   pass
+   colorElegido=""
+   repetir=True
+   while repetir:
+      i=1
+      for color in colores[1:]:
+         print(str(i)+" "+color)
+         i+=1
+      colorElegido=input("Escoge color: ")
+      if colorElegido.isnumeric() and int(colorElegido)>0 and int(colorElegido) <= len(colores)-1:
+         repetir=False
+   return colores[int(colorElegido)]
 
-def robar():
-   pass
+def robar(jugador,numero,baraja):
+   for p in range(numero):
+      if len(baraja)>0:
+         jugador["mano"].append(baraja[0])
+         baraja=baraja[1:]
+   return baraja
 
-def coger_Carta():
-   pass
+def pillarCartaRobo(jugador,cartaMesa,baraja):
+   if cartaMesa["valor"]=="+4":
+      print("\t*****ROBA 4 Cartas*****")
+      baraja=robar(jugador,4,baraja)
+      cartaMesa["robar"]=0
+   elif cartaMesa["valor"]=="+2" and cartaMesa["robar"]>0:
+      tengo=False
+      for carta in jugador["mano"]:
+         tengo=tengo or carta["valor"]=="+2"
+      if not tengo:
+         print("\t*****ROBA "+str(cartaMesa["robar"])+" Cartas*****")
+         baraja=robar(jugador, cartaMesa["robar"],baraja)
+         cartaMesa["robar"]=0
+   return baraja
 
-def jugar_Carta():
-   pass
+def coger_Carta(jugador, cartaEnMesa, baraja):
+   repetir=True
+   selecioniada=None
+   while repetir:
+      mostrarMano(jugador, True, cartaEnMesa)
+      print("\nCarta en la mesa: ", pintarCarta(monton[-1]))
+      idCartaEscogida=input("Que carta quieres tirar (R para robar, S para salir, Cartas en la Baraja: "+str(len(baraja))+"):").capitalize()
+      if idCartaEscogida=="R":
+         if len(baraja)>0:
+            baraja=robar(jugador,1,baraja)
+         else:
+            print("NO HAY CARTAS PARA ROBAR")
+      elif idCartaEscogida=="S":
+         
+         print('''
+                        \t\t██╗  ██╗ █████╗ ███████╗████████╗ █████╗     ██╗     ██╗   ██╗███████╗ ██████╗  ██████╗ 
+                        \t\t██║  ██║██╔══██╗██╔════╝╚══██╔══╝██╔══██╗    ██║     ██║   ██║██╔════╝██╔════╝ ██╔═══██╗
+                        \t\t███████║███████║███████╗   ██║   ███████║    ██║     ██║   ██║█████╗  ██║  ███╗██║   ██║
+                        \t\t██╔══██║██╔══██║╚════██║   ██║   ██╔══██║    ██║     ██║   ██║██╔══╝  ██║   ██║██║   ██║
+                        \t\t██║  ██║██║  ██║███████║   ██║   ██║  ██║    ███████╗╚██████╔╝███████╗╚██████╔╝╚██████╔╝
+                        \t\t╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝    ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ 
+                                                                                        ''')
+         return -1,baraja
+      elif idCartaEscogida.isnumeric() and int(idCartaEscogida)>0 and int(idCartaEscogida)<=len(jugador["mano"]):
+         cartaEscogida=jugador["mano"][int(idCartaEscogida)-1]
+         if seguir_Reglas(cartaEscogida,cartaEnMesa):
+            jugador["mano"]=jugador["mano"][0:int(idCartaEscogida)-1]+jugador["mano"][int(idCartaEscogida):]
+            if(cartaEscogida["color"]=="NEGRO"):
+               cartaEscogida["color"]=escogerColor()
+            repetir=False
+         else:
+            print("ESA CARTA NO VALE")
+   return cartaEscogida,baraja
 
-def puntos():
-   pass
+def puntos(carta):
+   if carta["valor"]=="+4":
+      return 100
+   if carta["valor"]=="+2":
+      return 20
+   if carta["valor"]=="COMODIN":
+      return 20
+   if carta["valor"]=="SALTO":
+      return 50
+   if carta["valor"]=="CAMBIO":
+      return 50
+   return int(carta["valor"])
+
+def jugar_Carta(jugador, cartaEnMesa, baraja):
+   repetir=True
+   selecioniada=None
+   while repetir:
+      print("Tiene "+str(len(jugador["mano"]))+" cartas")
+      
+      cartasValidas=[]
+      cartasColor={}
+      for i,carta in enumerate(jugador["mano"]):
+         if seguir_Reglas(carta,cartaEnMesa):
+            cartasValidas.append(i)
+         if carta["color"]!="NEGRO":
+            if carta["color"] in cartasColor:
+               cartasColor[carta["color"]]+=1
+            else:
+               cartasColor[carta["color"]]=1
+      idCartaSeleccionada=-1
+      if len(cartasValidas)==0:
+         if len(baraja)>0:
+            print("\tRobo carta")
+            baraja=robar(jugador,1,baraja)
+         else:
+            print("NO HAY CARTAS PARA ROBAR")
+            return None,baraja
+      else:
+         for idCarta in cartasValidas:
+            if idCartaSeleccionada<0:
+               idCartaSeleccionada=idCarta
+            else:
+               if not jugador["mano"][idCarta]["valor"].isnumeric():
+                  idCartaSeleccionada=idCarta
+      
+         if jugador["mano"][idCartaSeleccionada]["color"]=="NEGRO":
+            color=""
+            colorNumero=0
+            for c in cartasColor:
+               if cartasColor[c]>colorNumero:
+                  colorNumero=cartasColor[c]
+                  color=c
+            jugador["mano"][idCartaSeleccionada]["color"]=c
+         repetir=False
+   cartaEscogida=jugador["mano"][idCartaSeleccionada]
+   jugador["mano"]=jugador["mano"][0:int(idCartaSeleccionada)]+jugador["mano"][int(idCartaSeleccionada)+1:]
+   return cartaEscogida,baraja
 
 colores=["NEGRO", "AZUL", "VERDE", "ROJA", "AMARILLA"]
 baraja=[] 
 monton=[] 
 baraja=crearBaraja()
+
+jugadores=[{"nombre":"","mano":[], "tipo":"perdedor", "puntuacion":0},
+   {"nombre":"Elvis","mano":[], "tipo": "bot", "puntuacion":0},
+   {"nombre":"Navarro","mano":[], "tipo": "bot", "puntuacion":0},
+   {"nombre":"Jaime","mano":[], "tipo": "bot", "puntuacion":0}]
+jugadores[0]["nombre"]=input("Dime tu nombre: ")
+
+for p in range(7):
+   for jugador in jugadores:
+      jugador["mano"].append(baraja[0])
+      baraja=baraja[1:]
+
+monton.append(baraja[0])
+baraja=baraja[1:]
+if(monton[0]["color"]=="NEGRO"):
+   monton[0]["color"]=rd.choice(colores[1:])

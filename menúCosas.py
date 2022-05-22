@@ -25,10 +25,11 @@ while not salir:
  ╚════╝  ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝
           ''')
     print ("1. Ahorcado")
-    print ("2. Uno de carreras")
-    print ("3. Modo locura")
+    print ("2. Uno")
+    print ("3. Snake")
     print ("4. Code Master")
     print ("5. Numberdle")
+    print ("6. Pong")
     print ("6. Salir")
      
     print ("\nElige una opcion.")
@@ -40,12 +41,12 @@ while not salir:
         import AHORCADO
         
     elif opcion == 2:
-        print ("Has elegido Uno de carreras")
-        # import *archivo
+        print ("Has elegido el Uno ")
+        import UNO
 
     elif opcion == 3:
-        print("Has elegido Modo locura")
-         # import *archivo
+        print("Has elegido Snake")
+        import snake
         
     elif opcion == 4:
         print("Has elegido Code Master")
@@ -56,6 +57,10 @@ while not salir:
         import NUMBERDLE
         
     elif opcion == 6:
+        print("Has elegido el Pong")
+        import pong
+        
+    elif opcion == 7:
         salir = True
     else:
         print ("Error, introduce un numero comprendido entre 1 y 6")
